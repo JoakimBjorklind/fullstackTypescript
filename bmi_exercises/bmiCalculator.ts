@@ -42,11 +42,17 @@ const calculateBmi = (height: number, weight: number) : string => {
 };
 
 try {
-    const {height, weight} = parseArguments(process.argv);
-    console.log(calculateBmi(height, weight));
+    //const {height, weight} = parseArguments(process.argv);
+    //console.log(calculateBmi(height, weight));
+    if (process.argv.length > 2) {
+        const arggg = parseArguments(process.argv);
+        console.log(calculateBmi(arggg.height, arggg.weight));
+      }
 } catch (e) {
     console.log('Error:', e.message);
 }
 
 
 //console.log(calculateBmi(180, 74));
+
+export { calculateBmi };
