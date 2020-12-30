@@ -12,11 +12,11 @@ interface BmiValues {
         return {
           height: Number(args[2]),
           weight: Number(args[3])
-        }
+        };
       } else {
         throw new Error('Provided values were not numbers!');
       }
-    }
+    };
 
 const calculateBmi = (height: number, weight: number) : string => {
   const bmi = weight / Math.pow(height / 100, 2);
@@ -48,8 +48,8 @@ try {
         const arggg = parseArguments(process.argv);
         console.log(calculateBmi(arggg.height, arggg.weight));
       }
-} catch (e) {
-    console.log('Error:', e.message);
+} catch (error) {
+    console.log('Error:', error);
 }
 
 

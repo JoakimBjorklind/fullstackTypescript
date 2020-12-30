@@ -18,19 +18,19 @@ app.get('/bmi', (req, res) => {
           "height": height,
           "weight": weight,
           "bmi": bmi
-        }
-        res.send(response)
+        };
+        res.send(response);
       } else {
         res.status(400).send({
           error: 'Malformatted parameters'
-        })
+        });
       }
     } catch (error) {
       res.status(400).send({
-        error: error.message
-      })
+        error: 'Malformatted parameters'
+      });
     }
-  })
+  });
 const PORT = 3002;
 
 app.listen(PORT, () => {
